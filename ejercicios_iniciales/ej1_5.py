@@ -1,0 +1,10 @@
+'''Escribe un programa que pida el importe sin IVA de un artículo y el tipo de IVA a aplicar y calcule e imprima por
+pantalla el precio final del artículo.'''
+
+artSinIVA = float(input("Introduzca el precio del articulo sin IVA = "))
+
+ivaApl = float(input("IVA a aplicar = "))
+
+precioFinal = artSinIVA + (artSinIVA * ivaApl)
+
+print(precioFinal)
