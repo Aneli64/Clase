@@ -9,6 +9,6 @@ articulo1 = float(input("Introduzca el precio del primer articulo: "))
 articulo2 = float(input("Introduzca el precio del segundo articulo: "))
 articulo3 = float(input("Introduzca el precio del tercer articulo: "))
 
-SalarioTotalMensual = sueldoBase + (articulo1*com + articulo2*com + articulo3*com)
+SalarioTotalMensual = sueldoBase + ((articulo1 + articulo2 + articulo3) * com)
 
 print(SalarioTotalMensual)

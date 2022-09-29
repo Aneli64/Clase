@@ -2,7 +2,6 @@
 desea saber cuanto deberá pagar finalmente por su compra.'''
 
 precioArt = float(input("Introduzca el precio de su articulo"))
-
 desc = 0.15
 
 precioConDescuento = precioArt - (precioArt*desc)
