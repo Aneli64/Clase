@@ -5,3 +5,15 @@ velocidades (km/h) y con esto determinar y mostrar en que tiempo (minutos) alcan
 vehículo más rápido al otro.
 '''
 
+velCoch1 = float(input("Introduzca la velocidad del primer coche: "))
+velCoch2 = float(input("Introduzca la velocidad del segundo coche: "))
+distancia = float(input("Distancia: "))
+
+tiempo = 0
+
+while velCoch2 < distancia:
+    velCoch2 += velCoch2
+    distancia += velCoch1
+    tiempo += 1
+    
+print("Ha tardado ", tiempo*60, " minutos en alcanzarle")
