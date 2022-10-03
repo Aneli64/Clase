@@ -19,8 +19,10 @@ y mostrar la cantidad de dinero que recibirá el usuario.
 puntuacion = float(input("Introduzca su puntuacion -> "))
 
 if puntuacion == 0.0:
-    print("Puntuacion [Inaceptable], su salario es -> ", puntuacion*2400.0)
+    print("Puntuacion [Inaceptable], su salario es -> ", puntuacion * 2400.0)
 elif puntuacion == 0.4:
     print("Puntuacion [Aceptable], su salario es -> ", puntuacion * 2400.0)
 elif puntuacion >= 0.6:
     print("Puntuacion [Meritorio], su salario es -> ", puntuacion * 2400.0)
+else:
+    print("Puntuacion no valida")
