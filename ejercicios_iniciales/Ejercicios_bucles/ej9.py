@@ -4,13 +4,11 @@ pregunte al usuario por la contraseña hasta que introduzca la contraseña corre
 '''
 
 password = "hola"
-check = False
+passwordIN = str(input("Introduzca la contraseña: \n"))
 
-while not check:
+while passwordIN != password:
+    print("Contraseña incorrecta")
     passwordIN = str(input("Introduzca la contraseña: \n"))
-    if passwordIN == password:
-        check = True
-        print("Password correcta, acceso permitido")
-    else:
-        check = False
-        print("Password incorrecta, intentelo de nuevo")
+
+print("Contraseña correcta")
+
