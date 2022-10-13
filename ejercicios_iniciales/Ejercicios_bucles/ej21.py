@@ -7,18 +7,15 @@ ingreso de datos cuando el usuario ingrese el monto 0. Si ingresa un monto negat
 '''
 
 monto = float(input("Introduzca una compra: \n"))
-total = monto
+suma = 0
 
 while monto != 0:
-    if monto < 0:
-        monto = float(input("Precio no valido, introduzca uno nuevo: \n"))
-    elif monto > 0:
-        monto = float(input("Ingrese nueva compra: \n"))
-        total += monto
-        print(monto)
+    if monto > 0:
+        suma += monto
+    monto = float(input("Introduzca uno nuevo: \n"))
 
-if total > 1000:
-    precioFinal = total - (total*0.10)
+if suma > 1000:
+    precioFinal = suma - (suma*0.10)
     print("Su importe total es -> ", precioFinal, " (Se le ha aplicado un descuento del 10%)")
 else:
-    print("Su importe total es -> ", total)
+    print("Su importe total es -> ", suma)

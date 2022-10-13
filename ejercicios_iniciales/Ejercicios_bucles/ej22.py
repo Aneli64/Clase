@@ -6,7 +6,7 @@ Al finalizar, informar la cantidad de dígitos pares y de dígitos impares leíd
 
 numero = input("Introduzca un numero entero positivo: \n")
 
-while int(numero != 0):
+while int(numero) != 0:
     contPares = 0
     contImpares = 0
     for i in range(0, len(str(numero))):

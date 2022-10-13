@@ -8,13 +8,9 @@ frase = input("Introduzca una frase: \n")
 palabrasEnFrase = []
 
 fraseList = frase.split(" ")
+
 for item in fraseList:
-    if item == " ":
-        fraseList.remove()
-    else:
-        palabrasEnFrase.append(len(item))
+    palabrasEnFrase.append(len(item))
+maximo = max(palabrasEnFrase)
 
-palabraMayor = max(sorted(palabrasEnFrase))
-print(palabrasEnFrase, "su palabra mas larga es,", palabraMayor)
-
-print(fraseList)
+print(maximo)
