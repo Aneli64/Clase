@@ -8,11 +8,12 @@ contNumPrimos = 0
 listaNumDiv = []
 
 while numeros != 0:
-    numeros = int(input("Introduzca un nuevo numero (0 para salir): \n"))
     for i in range(1, numeros + 1):
         if numeros % i == 0:
             listaNumDiv.append(i)
     if listaNumDiv.__len__() == 2:
         contNumPrimos += 1
+    numeros = int(input("Introduzca un nuevo numero (0 para salir): \n"))
 
 print("Ha introducido, ", contNumPrimos, "numeros primos")
+print(listaNumDiv.__len__())

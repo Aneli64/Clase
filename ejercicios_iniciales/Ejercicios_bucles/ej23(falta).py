@@ -13,12 +13,13 @@ while libro != "*":
     contNum = 0
     linComp = 0
     if libro != "/":
+        linComp += 1
         for i in range(0, len(libro)):
             if libro[i] in numeros:
                 contNum += 1
-                linComp += 1
         libro = input("Libro: \n")
     else:
         print("Linea completa. Aparecen ", contNum, "digitos numericos")
+        libro = input("Libro: \n")
 
 print("Fin. Se leyeron ", linComp, "lineas completas")

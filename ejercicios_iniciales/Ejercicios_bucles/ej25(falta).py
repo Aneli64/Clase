@@ -4,13 +4,16 @@ Solicitar al usuario que ingrese una frase y luego informar cuál fue la palabra
 se tomará como separador de palabras al carácter “ “ (espacio), ya sea uno o más
 '''
 
+# PROBAR USAR WHILE!
+listaCont = []
+cont = 0
 frase = input("Introduzca una frase: \n")
-palabrasEnFrase = []
 
-fraseList = frase.split(" ")
+for i in range(0, len(frase)):
+    if frase[i] != " ":
+        cont += 1
+    else:
+        listaCont.append(cont)
+        cont = 0
 
-for item in fraseList:
-    palabrasEnFrase.append(len(item))
-maximo = max(palabrasEnFrase)
-
-print(maximo)
+print(listaCont)
