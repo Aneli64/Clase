@@ -6,20 +6,19 @@ numéricos (del 0 al 9) aparecieron en total (en todos los títulos de libros qu
 Finalmente, informar cuántas líneas completas se ingresaron.
 '''
 
-libro = input("Libro: \n")
-numeros = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+libro = input("Libro: ")
+numeros = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+contNumeros = 0
+contLineas = 0
 
 while libro != "*":
-    contNum = 0
-    linComp = 0
-    if libro != "/":
-        linComp += 1
-        for i in range(0, len(libro)):
-            if libro[i] in numeros:
-                contNum += 1
-        libro = input("Libro: \n")
-    else:
-        print("Linea completa. Aparecen ", contNum, "digitos numericos")
-        libro = input("Libro: \n")
+    for i in range(0, len(libro)):
+        if libro[i] == "/":
+            contLineas += 1
+            print("Linea completa. Aparecen", contNumeros, "digitos numericos")
+        elif libro[i] in numeros:
+            contNumeros += 1
+    contLineas += 1
+    libro = input("Libro: ")
 
-print("Fin. Se leyeron ", linComp, "lineas completas")
+print("Fin. Se leyeron", contLineas + 1, "lineas completas")

@@ -13,7 +13,8 @@ while numeros != 0:
             listaNumDiv.append(i)
     if listaNumDiv.__len__() == 2:
         contNumPrimos += 1
+    else:
+        listaNumDiv.clear()
     numeros = int(input("Introduzca un nuevo numero (0 para salir): \n"))
 
 print("Ha introducido, ", contNumPrimos, "numeros primos")
-print(listaNumDiv.__len__())

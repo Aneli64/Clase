@@ -4,16 +4,17 @@ Solicitar al usuario que ingrese una frase y luego informar cuál fue la palabra
 se tomará como separador de palabras al carácter “ “ (espacio), ya sea uno o más
 '''
 
-# PROBAR USAR WHILE!
 listaCont = []
-cont = 0
+contLetra = 0
+mayorPalabra = 0
 frase = input("Introduzca una frase: \n")
 
 for i in range(0, len(frase)):
     if frase[i] != " ":
-        cont += 1
+        contLetra += 1
     else:
-        listaCont.append(cont)
-        cont = 0
+        if contLetra >= mayorPalabra:
+            mayorPalabra = contLetra
+            contLetra = 0
 
-print(listaCont)
+print("Su palabra mas grande mide -> ", mayorPalabra)
