@@ -4,7 +4,6 @@ Solicitar al usuario que ingrese una frase y luego informar cuál fue la palabra
 se tomará como separador de palabras al carácter “ “ (espacio), ya sea uno o más
 '''
 
-listaCont = []
 contLetra = 0
 mayorPalabra = 0
 frase = input("Introduzca una frase: \n")
