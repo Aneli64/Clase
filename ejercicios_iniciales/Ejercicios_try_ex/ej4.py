@@ -11,11 +11,25 @@ si alguna nota es menor de 0 y mayor de 10 lanzar una excepción.
 nombre = input("Nombre: \n")
 califLIst = []
 promedioList = []
+numAlumnos = 0
+promedioMayor8 = 0
 
 opcion = input("¿Desea continuar? |si|-|no| \n")
 while opcion != "no":
     for i in range(0, 5):
         calif = float(input("Nota -> "))
         califLIst.append(calif)
+    promedioList.append(sum(califLIst) / len(califLIst))
+    califLIst.clear()
+    numAlumnos += 1
+    print("Promedio del alumno -> ", promedioList[len(promedioList)-1])
+    opcion = input("¿Desea continuar? |si|-|no| \n")
+    if opcion == "no":
+        break
+    else:
+        nombre = input("Nombre: \n")
+for item in promedioList:
+    if item >= 8:
+        promedioMayor8 += 1
 
-print("Promedio del alumno -> ", sum(califLIst)/len(califLIst))
+print("Promedio grupo -> ", round(sum(promedioList)/len(promedioList), 2), "\n", "numero de alumnos -> ", numAlumnos, "\n", "alumnos con promedio mayor que 8 -> ", promedioMayor8)
