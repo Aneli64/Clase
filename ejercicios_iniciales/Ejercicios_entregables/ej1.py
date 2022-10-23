@@ -14,11 +14,8 @@ dia2 = int(input("Dia -> "))
 mes2 = int(input("Mes -> "))
 año2 = int(input("Año -> "))
 
-diaF1 = dia1 + (30 * mes1)
-diaF2 = dia2 + (30 * mes2)
+diaF = dia1 - dia2
+mesF = mes1 - mes2
+añoF = año1 - año2
 
-diferenciaAños = max(año2, año1) - min(año2, año1)
-diasFinales = (diferenciaAños * 360) + abs(diaF1 - diaF2)
-
-print("Su diferencia de dias son -> ", diasFinales)
-print("Su diferencia de fechas es -> ", )
+print(abs(diaF), "dias/", abs(mesF), "meses/", abs(añoF), "años")
