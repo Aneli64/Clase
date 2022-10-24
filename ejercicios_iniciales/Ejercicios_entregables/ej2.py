@@ -15,6 +15,8 @@ for item in cadena:
     if item not in listaLetras:
         listaLetras.append(item)
 
+
+'''
 for i in range(0, len(cadenaOrdenada)-1):
     if cadenaOrdenada[i] != cadenaOrdenada[i+1]:
         contLetras.append(cont)
@@ -31,4 +33,5 @@ mayorOcurrencia = sorted(listaLetras)[len(listaLetras)-1]
 print(sorted(listaLetras))
 
 print("Mayor ocurrencia ", mayorOcurrencia, "con ", max(contLetras))
-'''REHACER DE NUEVO, SOLO FUNCIONA CON EL CASO DE EJEMPLO DEL EJ'''
+REHACER DE NUEVO, SOLO FUNCIONA CON EL CASO DE EJEMPLO DEL EJ
+'''
