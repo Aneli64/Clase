@@ -14,8 +14,22 @@ dia2 = int(input("Dia -> "))
 mes2 = int(input("Mes -> "))
 año2 = int(input("Año -> "))
 
-diaF = dia1 - dia2
-mesF = mes1 - mes2
-añoF = año1 - año2
+diaMax = max(dia1, dia2)
+diaMin = min(dia1, dia2)
+mesMax = max(mes1, mes2)
+mesMin = min(mes1, mes2)
+añoMax = max(año1, año2)
+añoMin = min(año1, año2)
 
-print(abs(diaF), "dias/", abs(mesF), "meses/", abs(añoF), "años")
+diasDiferencia = abs((dia1 + (mes1 * 30)) - (dia2 + (mes2 * 30)))
+dias = abs((30 - dia1) - (30 - dia2))
+añosDiferencia = abs(año1 -año2)
+contMesesDiferencia = 0
+diasDiferenciaTotal = diasDiferencia
+
+while diasDiferenciaTotal - 30 >= 0:
+    contMesesDiferencia += 1
+    diasDiferenciaTotal -= 30
+
+print("periodo entre fechas \n", diasDiferenciaTotal, "dias", contMesesDiferencia, "meses", añosDiferencia, "años")
+
