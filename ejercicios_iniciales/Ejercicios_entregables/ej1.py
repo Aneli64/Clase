@@ -14,13 +14,6 @@ dia2 = int(input("Dia -> "))
 mes2 = int(input("Mes -> "))
 año2 = int(input("Año -> "))
 
-diaMax = max(dia1, dia2)
-diaMin = min(dia1, dia2)
-mesMax = max(mes1, mes2)
-mesMin = min(mes1, mes2)
-añoMax = max(año1, año2)
-añoMin = min(año1, año2)
-
 diasDiferencia = abs((dia1 + (mes1 * 30)) - (dia2 + (mes2 * 30)))
 dias = abs((30 - dia1) - (30 - dia2))
 añosDiferencia = abs(año1 -año2)

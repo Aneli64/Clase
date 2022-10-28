@@ -1,4 +1,3 @@
-
 numPruebas = int(input("Numero de pruebas - > "))
 
 listaParejas1 = []
@@ -12,13 +11,17 @@ while numPruebas > 0:
     listaParejas2.append(pareja2)
     numPruebas -= 1
 
-for i in range(0, len(listaParejas1)):
-    for item in listaParejas1[i]:
-        if item in range(int(listaParejas1[i].split(" ")[0]), int(listaParejas1[i].split(" ")[1])) == any(item) in range(int(listaParejas2[i].split(" ")[0]), int(listaParejas2[i].split(" ")[1])):
-            print("SOLAPADOS")
-        else:
-            print("SEPARADOS")
+valores1 = []
+valores2 = []
 
-print(listaParejas1)
-print(listaParejas2)
-print(len(listaParejas1))
+for i in range(0, len(listaParejas1)):
+    for item in range(int(listaParejas1[i].split(" ")[0]), int(listaParejas1[i].split(" ")[1])+1):
+        valores1.append(item)
+    for item in range(int(listaParejas2[i].split(" ")[0]), int(listaParejas2[i].split(" ")[1])+1):
+        valores2.append(item)
+
+for item in valores1:
+    if item == valores2:
+        print("SOLAPADOS")
+    else:
+        print("SEPARADOS")

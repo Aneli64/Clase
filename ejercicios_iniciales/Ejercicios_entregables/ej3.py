@@ -23,7 +23,7 @@ for i in range(1, len(listaMatricula)):
                 if listaMatricula[k][x] == listaMatricula[0][j]:
                     j += 1
                 else:
-                    if str(listaMatricula[k][x]) > str(listaMatricula[0][j]):
+                    if listaMatricula[k][x] > listaMatricula[0][j]:
                         contNuevas += 1
                         break
                     else:
