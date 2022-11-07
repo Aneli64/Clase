@@ -4,8 +4,15 @@ de las dos esté vacía lanzar una excepción NameError  con el mensaje “no se
 Después mostrará las veces que aparece dicha palabra en esa frase y los lugares.
 '''
 
-frase = input("Frase: \n")
-palabra = input("Palabra: \n")
+
+class vacioEx:
+    pass
+
+try:
+    frase = input("Frase: \n")
+    palabra = input("Palabra: \n")
+except:
+    "Mensaje vacio"
 listaFrase = frase.split()
 contP = 0
 

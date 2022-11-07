@@ -22,23 +22,18 @@ print("Tiene que repetir las siguientes asignaturas: \n", asignaturas)
 '''
 
 listaAsigNotas = []
-notas = []
-listaFinal = []
 asigSize = int(input("Numero de asignaturas a introducir -> "))
 
 for i in range(0, asigSize):
+    nota = int(input("Introduzca su nota -> "))
+    listaAsigNotas.append(nota)
     asig = str(input("Introduzca su asignatura -> "))
     listaAsigNotas.append(asig)
-    nota = int(input("Introduzca su nota -> "))
-    notas.append(nota)
 
-numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-for i in range(0, len(listaAsigNotas)):
-    listaAsigNotas.append(notas[i])
 
-for i in range(0, len(listaAsigNotas)):
-    listaFinal.append(listaAsigNotas[i])
-    if listaAsigNotas[i] in numeros:
-        listaFinal.append(listaAsigNotas[i])
+for i in range(0, len(listaAsigNotas), 2):
+    if int(listaAsigNotas[i]) >= 5:
+        listaAsigNotas.remove(listaAsigNotas[i])
+        listaAsigNotas.remove(listaAsigNotas[i-1])
 
-print(listaFinal)
+print(listaAsigNotas)
