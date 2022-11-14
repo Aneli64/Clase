@@ -4,6 +4,7 @@ de asignaturas y guardaremos en una lista de listas las notas de todos los alumn
 las asignaturas. Imprimir boletín de notas de cada alumno.
 por otro lado una estadística de cada asignatura.
 '''
+from math import trunc
 
 nombres = ["Paco", "Jose", "Laura"]
 asignaturas = ["Mates", "Lengua", "Historia", "Fisica", "Quimica"]
@@ -20,5 +21,22 @@ notasHistoria = []
 notasFisica = []
 notasQuimica = []
 
-# for i in range(0, len(asignaturas)):
-    # for j in range(0, len(notas[i])):
+listaAsig = [notasMates, notasLengua, notasHistoria, notasFisica, notasQuimica]
+listaPorcentAsig = []
+for i in range(0, len(notas)):
+    notasMates.append(notas[i][0])
+    notasLengua.append(notas[i][1])
+    notasHistoria.append(notas[i][2])
+    notasFisica.append(notas[i][3])
+    notasQuimica.append(notas[i][4])
+
+contAprob = 0
+for i in range(0, len(listaAsig)):
+    for item in listaAsig[i]:
+        if item >= 5:
+            contAprob += 1
+    listaPorcentAsig.append(trunc(contAprob / len(listaAsig[i]) * 100))
+    contAprob = 0
+
+for i in range(0, len(listaPorcentAsig)):
+    print(f"Porcentaje de aprobados en {asignaturas[i]} -> {listaPorcentAsig[i]}%")
