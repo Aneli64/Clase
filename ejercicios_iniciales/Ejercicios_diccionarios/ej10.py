@@ -31,7 +31,7 @@ while entradaMenu != 6:
         direccion = input("Direccion -> ")
         telefono = input("telefono -> ")
         correo = input("correo -> ")
-        preferente = bool(input("preferente -> ")) # Mirar esto, no va la opcion 5 del menu
+        preferente = bool(input("preferente -> ")) # porque los pone los dos a true???
         datosTemp = [nifcliente, nombre, direccion, telefono, correo, preferente]
 
         datosCliente.extend(datosTemp)
@@ -51,9 +51,9 @@ while entradaMenu != 6:
     elif entradaMenu == 4:
         for c, v in dicDatos.items():
             print(f"Datos del NIF {c}: \n {v}")
-    elif entradaMenu == 5: # Este es el unico que falla
+    elif entradaMenu == 5:  # Este es el unico que falla
         for c, v in dicDatos.items():
-            if v[preferente]:
+            if v[4]:
                 print(f"Datos del NIF {c}: \n {v}")
     entradaMenu = int(
         input("Elija una opcion -> (1) Añadir cliente, (2) Eliminar cliente, (3) Mostrar cliente, (4) Listar "
