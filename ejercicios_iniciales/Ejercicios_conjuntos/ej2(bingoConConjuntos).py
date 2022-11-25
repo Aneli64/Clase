@@ -25,7 +25,7 @@ while len(carton1) != 0 and len(carton2) != 0:
     print(f"Lista jugador1 -> {carton1} \n Lista jugador2 -> {carton2}")
     if numeroCantado in carton1:
         carton1.remove(numeroCantado)
-    elif numeroCantado in carton2:
+    if numeroCantado in carton2:
         carton2.remove(numeroCantado)
     if numeroCantado not in numerosYasalidos:
         numerosYasalidos.append(numeroCantado)
