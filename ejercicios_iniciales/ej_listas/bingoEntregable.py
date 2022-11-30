@@ -27,19 +27,41 @@ def valoresCarton(lista):
     return valores
 
 
+def linea(lista):
+    for item in lista:
+        if item == [0, 0, 0, 0]:
+            return True
+
+
+def bingo(lista):
+    if sum(lista) == 0:
+        return True
+
+# ganador primera linea
+def ganadorLinea(contLinea):
+    if contLinea == 1:
+        return True
+# ganador partida (bingo)
+def ganadorBingo(tableroBingo):
+    if tableroBingo:
+        return True
+
 bingo1 = [[], [], []]
 bingoF1 = aleatorio(bingo1)
 
 bingo2 = [[], [], []]
 bingoF2 = aleatorio(bingo2)
 
-cont1 = 20
-cont2 = 20
-numerosDisp = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
-               16, 17, 18, 19, 20}
+numerosDisp = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
+
+# Variables que usaremos para que solo se cante una vez la linea, y para almacenar quien cantó esta primera linea
+contLinea = 0
+contLJ1 = 0
+contLJ2 = 0
+
 print(mostrarCarton(bingoF1))
 print(mostrarCarton(bingoF2))
-while cont1 != 0 or cont2 != 0:  # borra esta guarrada
+while not bingo(valoresCarton(bingoF1)) or not bingo(valoresCarton(bingoF2)):
     siguiente = input("Presione una tecla para generar un numero aleatorio: ")
     numeroBingo = random.choice(list(numerosDisp))
     print("Numero cantado -> ", numeroBingo)
@@ -50,27 +72,32 @@ while cont1 != 0 or cont2 != 0:  # borra esta guarrada
                 if bingoF1[i][j] == numeroBingo:
                     bingoF1[i][j] = 0
     if numeroBingo in valoresCarton(bingoF2):
-        for i in range(-1, len(bingoF2)):  # PORQUE SIGUE SIN BORRAR ALGS NUMEROS??!
+        for i in range(-1, len(bingoF2)):
             for j in range(-1, len(bingoF2[i])):
                 if bingoF2[i][j] == numeroBingo:
                     bingoF2[i][j] = 0
     numerosDisp.remove(numeroBingo)
     print(mostrarCarton(bingoF1))
     print(mostrarCarton(bingoF2))
-    # una vez que salga linea que no vuelva a salir
-    for item in bingoF1:
-        if item == [0, 0, 0, 0]:
-            print("¡Jugador 1 ha cantado linea!")
-    for item in bingoF2:
-        if item == [0, 0, 0, 0]:
-            print("¡Jugador 2 ha cantado linea!")
 
-    if sum(valoresCarton(bingoF1)) == 0:
-        print("BINGO J1!")
-        break
-    if sum(valoresCarton(bingoF2)) == 0:
-        print("BINGO J2!")
-        break
+    if linea(bingoF1) and contLinea != 1:
+        print("¡Jugador 1 ha cantado linea!")
+        contLinea += 1
+        contLJ1 += 1
+    if linea(bingoF2) and contLinea != 1:
+        print("¡Jugador 2 ha cantado linea!")
+        contLinea += 1
+        contLJ2 += 1
 
-# print(mostrarCarton(bingoF1))
-# print(mostrarCarton(bingoF2))
+if ganadorLinea(contLJ1):
+    print("Jugador1 ganador de la primera linea")
+if ganadorLinea(contLJ2):
+    print("Jugador2 ganador de la primera linea")
+
+if ganadorBingo(bingo(bingoF1)):
+    print("Jugador1 ganador del bingo")
+if ganadorBingo(bingo(bingoF2)):
+    print("Jugador2 ganador del bingo")
+
+
+
