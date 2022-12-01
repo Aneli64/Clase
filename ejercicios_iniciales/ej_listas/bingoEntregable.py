@@ -29,7 +29,7 @@ def valoresCarton(lista):
 
 def linea(lista):
     for item in lista:
-        if item == [0, 0, 0, 0]:
+        if item == ["X", "X", "X", "X"]:
             return True
 
 
@@ -54,7 +54,7 @@ def borrar(lista, numeroCoinc):
     for i in range(-1, len(lista)):
         for j in range(-1, len(lista[i])):
             if lista[i][j] == numeroCoinc:
-                lista[i][j] = 0
+                lista[i][j] = "X"
 
 
 bingo1 = [[], [], []]
@@ -63,7 +63,7 @@ bingoF1 = aleatorio(bingo1)
 bingo2 = [[], [], []]
 bingoF2 = aleatorio(bingo2)
 
-numerosDisp = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
+numerosDisp = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
 # Variables que usaremos para que solo se cante una vez la linea, y para almacenar quien cantó esta primera linea
 contLinea = 0
