@@ -34,17 +34,30 @@ def linea(lista):
 
 
 def bingo(lista):
-    if sum(lista) == 0:
+    suma = 0
+    for item in lista:
+        suma += item
+    if suma == 0:
         return True
 
 # ganador primera linea
 def ganadorLinea(contLinea):
     if contLinea == 1:
         return True
+
+
 # ganador partida (bingo)
 def ganadorBingo(tableroBingo):
     if tableroBingo:
         return True
+
+
+def borrar(lista, numeroCoinc):
+    for i in range(-1, len(lista)):
+        for j in range(-1, len(lista[i])):
+            if lista[i][j] == numeroCoinc:
+                lista[i][j] = 0
+
 
 bingo1 = [[], [], []]
 bingoF1 = aleatorio(bingo1)
@@ -61,21 +74,17 @@ contLJ2 = 0
 
 print(mostrarCarton(bingoF1))
 print(mostrarCarton(bingoF2))
-while not bingo(valoresCarton(bingoF1)) or not bingo(valoresCarton(bingoF2)):
+
+while bingo(valoresCarton(bingoF1)) != True or bingo(valoresCarton(bingoF2)) != True:
     siguiente = input("Presione una tecla para generar un numero aleatorio: ")
     numeroBingo = random.choice(list(numerosDisp))
     print("Numero cantado -> ", numeroBingo)
 
-    if numeroBingo in valoresCarton(bingoF1):  # hacer funcion borrar() para poner la X
-        for i in range(-1, len(bingoF1)):
-            for j in range(-1, len(bingoF1[i])):
-                if bingoF1[i][j] == numeroBingo:
-                    bingoF1[i][j] = 0
+    if numeroBingo in valoresCarton(bingoF1):
+        borrar(bingoF1, numeroBingo)
     if numeroBingo in valoresCarton(bingoF2):
-        for i in range(-1, len(bingoF2)):
-            for j in range(-1, len(bingoF2[i])):
-                if bingoF2[i][j] == numeroBingo:
-                    bingoF2[i][j] = 0
+        borrar(bingoF2, numeroBingo)
+
     numerosDisp.remove(numeroBingo)
     print(mostrarCarton(bingoF1))
     print(mostrarCarton(bingoF2))
@@ -98,6 +107,3 @@ if ganadorBingo(bingo(bingoF1)):
     print("Jugador1 ganador del bingo")
 if ganadorBingo(bingo(bingoF2)):
     print("Jugador2 ganador del bingo")
-
-
-
