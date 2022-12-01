@@ -15,7 +15,7 @@ def aleatorio(lista):  # Def que llena nuestro bingo de numeros aleeatorios que 
 
 
 def mostrarCarton(lista):
-    return f"\n {lista[0]} \n {lista[1]} \n {lista[2]}"
+    return f"\n {'*' * 16} \n {lista[0]} \n {lista[1]} \n {lista[2]} \n {'*' * 16}"
 
 
 # Def Bucle para tener todos los valores en una lista respectivamente (para su facil y mejor manejo futuro)
@@ -34,11 +34,9 @@ def linea(lista):
 
 
 def bingo(lista):
-    suma = 0
-    for item in lista:
-        suma += item
-    if suma == 0:
+    if sum(lista) == 0:
         return True
+
 
 # ganador primera linea
 def ganadorLinea(contLinea):
@@ -75,15 +73,19 @@ contLJ2 = 0
 print(mostrarCarton(bingoF1))
 print(mostrarCarton(bingoF2))
 
-while bingo(valoresCarton(bingoF1)) != True or bingo(valoresCarton(bingoF2)) != True:
+contB1 = 12
+contB2 = 12
+while contB1 != 0 and contB2 != 0:
     siguiente = input("Presione una tecla para generar un numero aleatorio: ")
     numeroBingo = random.choice(list(numerosDisp))
     print("Numero cantado -> ", numeroBingo)
 
     if numeroBingo in valoresCarton(bingoF1):
         borrar(bingoF1, numeroBingo)
+        contB1 -= 1
     if numeroBingo in valoresCarton(bingoF2):
         borrar(bingoF2, numeroBingo)
+        contB2 -= 1
 
     numerosDisp.remove(numeroBingo)
     print(mostrarCarton(bingoF1))
@@ -103,7 +105,9 @@ if ganadorLinea(contLJ1):
 if ganadorLinea(contLJ2):
     print("Jugador2 ganador de la primera linea")
 
-if ganadorBingo(bingo(bingoF1)):
+if contB1 < contB2:
     print("Jugador1 ganador del bingo")
-if ganadorBingo(bingo(bingoF2)):
+elif contB2 < contB1:
     print("Jugador2 ganador del bingo")
+else:
+    print("EMPATE")
